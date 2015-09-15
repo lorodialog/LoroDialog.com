@@ -1,0 +1,40 @@
+// ***********************************
+// ICONS
+// ***********************************
+// import font awesome
+@import "font-awesome/font-awesome";
+
+
+// ***********************************
+// ICOMOON
+// ***********************************
+// import icomoon
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../../fonts/icons/icomoon.eot?jibh9f');
+	src:url('../../fonts/icons/icomoon.eot?#iefixjibh9f') format('embedded-opentype'),
+		url('../../fonts/icons/icomoon.ttf?jibh9f') format('truetype'),
+		url('../../fonts/icons/icomoon.woff?jibh9f') format('woff'),
+		url('../../fonts/icons/icomoon.svg?jibh9f#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jquery:before {
+	content: "\e600";
+}

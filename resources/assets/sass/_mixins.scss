@@ -1,0 +1,221 @@
+// ***********************************
+// MIXINS
+// ***********************************
+
+@mixin transition-all($time:1s){
+	-webkit-transition: all $time ease-in-out;
+	-moz-transition: all $time ease-in-out;
+	-ms-transition: all $time ease-in-out;
+	-o-transition: all $time ease-in-out;
+	transition: all $time ease-in-out;
+}
+
+@mixin fade($time:0.5s){
+	-webkit-transition: background-color $time ease-in-out;
+	-moz-transition: background-color $time ease-in-out;
+	-o-transition: background-color $time ease-in-out;
+	-ms-transition: background-color $time ease-in-out;
+	transition: background-color $time ease-in-out;
+}
+
+@mixin calc($property, $expression) { 
+	#{$property}: -webkit-calc(#{$expression}); 
+	#{$property}: -moz-calc(#{$expression});
+	#{$property}: -ms-calc(#{$expression});
+	#{$property}: -o-calc(#{$expression});
+	#{$property}: calc(#{$expression}); 
+} 
+
+@mixin background-image($name, $size:false){
+	background-image: url(#{$image-path}/#{$name}.svg);
+	@if($size){
+		background-size: $size;
+	}
+	.no-svg &{
+		background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
+
+		@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+		  background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
+		}
+	}
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes $animation-name {
+		@content;
+	}
+	@-moz-keyframes $animation-name {
+		@content;
+	}  
+	@-ms-keyframes $animation-name {
+		@content;
+	}
+	@-o-keyframes $animation-name {
+		@content;
+	}  
+	@keyframes $animation-name {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};      
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: #{$radius};
+	-moz-border-radius: #{$radius};
+	-ms-border-radius: #{$radius};
+	-o-border-radius: #{$radius};
+	border-radius: #{$radius};
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	-ms-background-clip: padding-box;
+	-o-background-clip: padding-box;
+	background-clip: padding-box;      
+}
+
+@mixin border-left-radius($radius) {
+	-webkit-border-top-left-radius: #{$radius};
+	-moz-border-top-left-radius: #{$radius};
+	-ms-border-top-left-radius: #{$radius};
+	-o-border-top-left-radius: #{$radius};
+	border-top-left-radius: #{$radius};
+	-webkit-border-bottom-left-radius: #{$radius};
+	-moz-border-bottom-left-radius: #{$radius};
+	-ms-border-bottom-left-radius: #{$radius};
+	-o-border-bottom-left-radius: #{$radius};
+	border-bottom-left-radius: #{$radius};
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	-ms-background-clip: padding-box;
+	-o-background-clip: padding-box;
+	background-clip: padding-box;      
+}
+
+@mixin box-sizing($border-box) {
+  -webkit-box-sizing: $border-box;
+  -moz-box-sizing: $border-box;
+  -o-box-sizing: $border-box;
+  -ms-box-sizing: $border-box;
+  box-sizing: $border-box;
+}
+@mixin background-size($cover) {
+  -webkit-background-size: $cover;
+  -moz-background-size: $cover;
+  -o-background-size: $cover;
+  -ms-background-size: $cover;
+  background-size: $cover;
+}
+
+@mixin border-right-radius($radius) {
+	-webkit-border-top-right-radius: #{$radius};
+	-moz-border-top-right-radius: #{$radius};
+	-ms-border-top-right-radius: #{$radius};
+	-o-border-top-right-radius: #{$radius};
+	border-top-right-radius: #{$radius};
+	-webkit-border-bottom-right-radius: #{$radius};
+	-moz-border-bottom-right-radius: #{$radius};
+	-ms-border-bottom-right-radius: #{$radius};
+	-o-border-bottom-right-radius: #{$radius};
+	border-bottom-right-radius: #{$radius};
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	-ms-background-clip: padding-box;
+	-o-background-clip: padding-box;
+	background-clip: padding-box;      
+}
+
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: #{$shadow};
+	-moz-box-shadow: #{$shadow};
+	-ms-box-shadow: #{$shadow};
+	-o-box-shadow: #{$shadow};
+	box-shadow: #{$shadow};
+}
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// generic transform
+@mixin transform($transforms) {
+	-webkit-transform: #{$transforms};
+	-moz-transform: #{$transforms};
+	-o-transform: #{$transforms};
+	-ms-transform: #{$transforms};
+	transform: #{$transforms};
+}
+@mixin transform-origin($transform-origin) {
+	-webkit-transform-origin: #{$transform-origin};
+	-moz-transform-origin: #{$transform-origin};
+	-o-transform-origin: #{$transform-origin};
+	-ms-transform-origin: #{$transform-origin};
+	transform-origin: #{$transform-origin};
+}
+// translateX
+@mixin translateX($transX) {
+  @include transform(translateX($transX));
+}
+// translateX
+@mixin translateY($transY) {
+  @include transform(translateY($transY));
+}
+
+// rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+ 
+// scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+} 
+// translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+//transform origin
+@mixin transform-origin ($origin) {
+	moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+@mixin square($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+@mixin breakpoint($class) {
+  @if $class == xs {
+	@media (max-width: 767px) { @content; }
+  }
+
+  @else if $class == sm {
+	@media (min-width: 768px) { @content; }
+  }
+
+  @else if $class == md {
+	@media (min-width: 992px) { @content; }
+  }
+
+  @else if $class == lg {
+	@media (min-width: 1200px) { @content; }
+  }
+
+  @else {
+	@warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}

@@ -1,0 +1,87 @@
+// ***********************************
+// FOOTER
+// ***********************************
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 150px;
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	padding: 0 5%;
+	color: $white;
+	@include box-sizing(border-box);
+	z-index: 9;
+	#loro_logo {
+		width: 50%;
+	  	float: left;
+		text-align: left;
+		margin: 15px 0;
+		a {
+			margin: 0;
+			padding: 0;
+			svg {
+				height: 50px;
+			}
+		}
+	}
+	nav {
+	 	width: 50%;
+	  	float: left;
+		padding: 0;
+    	margin: 15px 0;
+		text-align: right;
+		ul {
+			padding: 0;
+			margin: 0;
+			@extend .clearfix;
+			li {
+				list-style: none;
+				a,p{
+					display: block;
+					padding: 0 10px;	
+					margin: 0;	
+					color: $white;
+					&:visited {
+						color: $white;
+					}		
+					&:focus, &:active, &:not( p ):hover {
+						color: $color1;
+					}	
+				}
+			}
+		}
+	}
+	.loro_auftrag {
+	  	width: 100%;
+	  	float: left;
+		h5 {
+			margin: 0;
+			color: rgba(255,255,255,1);
+			a {
+				&:hover {
+					color: darken( $color1, 20% );;
+				}
+			}
+		}
+	}
+	.loro_copyright {
+	  	width: 100%;
+	  	float: left;
+		p {
+			margin: 0;
+		}
+	}
+	@include breakpoint(md) {
+		#loro_logo {
+			margin: 0;
+			a {
+				svg {
+					height: 80px;
+				}
+			}
+		}
+	}
+}

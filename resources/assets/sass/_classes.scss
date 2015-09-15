@@ -1,0 +1,130 @@
+// ***********************************
+// CLASSES
+// ***********************************
+*,:before,:after {
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+-webkit-backface-visibility:hidden;
+}
+.loro_page {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	float: left;
+	position: relative;
+	padding: 0 !important;
+	h1 {
+		margin-top: 80px;
+	}
+}
+.title_tag {
+	background: $black;
+	color: $white;
+	padding: 12px;
+	display: inline-block;
+	border-left: 3px solid $color1;
+	line-height: normal;
+	margin: 0 0 0 5%;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		height: 100%;
+		background-color: $black;
+		width: 100vw * 0.05;
+
+		right: calc(100% + 3px);
+		top: 0;
+		display: block;
+		z-index: 999;
+	}
+}
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.green-underline {
+	&:after {
+		content: '';
+		height: 3px;
+		width: 140px;
+		display: block;
+		background-color: $color1;
+		position: absolute;
+		left: 50%;
+		@include calc(top, "100% + 15px");
+		margin-left: -70px;
+	}
+}
+blockquote {
+	font-family: hero-light;
+	font-size: $blockquote-font-size;
+	font-style: italic;
+	position: relative;
+	display: inline-block;
+	background: $white;
+	padding: 15px 30px 15px 30px;
+	line-height: normal;
+	&:before {
+	    content: url('../../images/comment-before-upside-down.svg');
+	    position: absolute;
+	    left: -40px;
+	    top: -7px;
+	    width: 70px;
+	}
+	&:after {
+	    content: url('../../images/comment-after.svg');
+	    position: absolute;
+	    right: -40px;
+	    bottom: -14px;
+	    width: 70px;
+	}
+}
+.background {
+    background-repeat:no-repeat;
+    /* custom background-position */
+    background-position:50% 50%;
+    /* ie8- graceful degradation */
+    background-position:50% 50%9 !important;
+}
+.loro_inhalt_zentrieren {
+    display:table;
+    height: 100%;
+}
+.loro_zentrum {
+    display:table-cell;
+    position:relative;
+    vertical-align:middle;
+    text-align:center;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.loro_page > article {
+	margin: 5%;
+}
+address {
+	font-style: normal;
+	a {
+		font-size: inherit;
+		color: $white;
+	}
+}

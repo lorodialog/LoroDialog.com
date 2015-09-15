@@ -1,0 +1,18 @@
+// ***********************************
+// DATENSCHUTZ
+// ***********************************
+
+#Datenschutz {
+	article {
+		text-align: left;
+		color: $white;
+		padding-bottom: 200px;
+		height: 100%;
+		overflow: hidden;
+	}
+	@include breakpoint(md) {
+		article {
+			width: 50%;
+		}
+	}
+}

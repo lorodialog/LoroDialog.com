@@ -1,0 +1,99 @@
+// ***********************************
+// PROJEKTE
+// ***********************************
+#Projekte {
+	background-color: $grey-light;
+	article {
+		@extend .clearfix;
+		.loro_gallerie {
+			width: 100%;
+			float: left;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.loro_beschreibung {
+			width: 100%;
+			float: left;
+			background-color: $white;
+			text-align: center;
+			.loro_datum {
+				@extend .clearfix;
+				p {
+					margin-bottom: 0;
+					color: $grey-dark;
+				}
+			}
+			h3 {
+				position: relative;
+				margin-top: 0;
+			}
+			.loro_projekt_text {
+				p {
+
+				}
+			}
+			ul {
+				padding: 0;
+				display: inline-block;	
+				@extend .clearfix;
+				li {
+					float: left;
+					list-style: none;
+					position: relative;
+					&:not( :last-of-type ) {
+						margin-right: 5px;
+					}
+					span {
+						@include border-left-radius(5px);
+						border: 2px solid;
+						border-color: $grey;
+						color: $white;
+						background-color: $grey;
+						display: block;
+						float: left;
+						margin:5px 0;
+						padding:3px;
+						font-size: $font-size;
+					}
+					p {
+						@include border-right-radius(5px);
+						border: 2px solid;
+						border-color: $grey;
+						display: block;
+						float: left;
+						margin: 5px 0;
+						padding:3px;
+						line-height: 100%;
+					}
+				}
+			}
+		}
+		.loro_zitat {
+			width: 100%;
+			float: left;
+			text-align: center;
+			blockquote {
+				font-size: 170%;
+			}
+		}
+	}
+	@include breakpoint(md) {
+		article {
+			.loro_gallerie {
+				width: 50%;
+			  	float: left;
+			}
+			.loro_beschreibung {
+				width: 50%;
+				float: left;
+			}
+			.loro_zitat {
+				blockquote {
+					font-size: 240%;
+				}
+			}
+		}
+	}
+}

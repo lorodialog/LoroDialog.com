@@ -1,0 +1,31 @@
+// ***********************************
+// STARTSEITE
+// ***********************************
+#Startseite {
+	background-image: url('../../images/loro-startseite-bg-3.jpg');
+	h2 {
+		font-size: 130%;
+		text-transform: uppercase;
+		&:first-of-type {
+			@include calc(margin-top, "100vh - 180px");
+			//@include calc(margin-top, "100vh - 315px");
+		}
+		&:last-of-type {
+			margin-top: 5px;
+		}
+	}
+	span.loro_weiter {
+
+	}
+	@include breakpoint(md) {
+		h2 {
+			font-size: 350%;
+			&:first-of-type {
+				@include calc(margin-top, "100vh - 315px");
+			}
+			&:last-of-type {
+				margin-top: 25px;
+			}
+		}
+	}
+}

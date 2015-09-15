@@ -1,0 +1,48 @@
+// ***********************************
+// KONTAKT
+// ***********************************
+
+#Kontakt {
+	background-image: url('../../images/loro-kontakt-bg-2.jpg');
+	article {
+		text-align: center;
+		color: $white;
+		.contact_foto {
+			@include square(100px);
+			@include border-radius(50%);
+		}
+		ul {
+			padding: 0;
+			li {
+				list-style: none;
+				h5 {
+					a {
+						color: $white;
+						font-size: 100%;
+						span {
+							@include transition-all(.5s);
+						}
+						&:hover {
+							& > span {
+								color: $color1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include breakpoint(md) {
+		article {
+			ul {
+				li {
+					h5 {
+						a {
+							font-size: 150%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
